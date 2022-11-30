@@ -1,8 +1,4 @@
-
-%retama=esparteína
-%rosal=vitamina C, qurcitrina
-
-%¿Cuales son plantas o plantas medicinales?
+%Lista de plantas
 %*******************************************************************************************
 planta(retema).
 planta(ricino).
@@ -15,6 +11,78 @@ planta(tabachín).
 planta(taray).
 planta(tila).
 
+%Contenido de plantas
+%*******************************************************************************************
+contenidoDeLasPlantas(planta, vitaminas).
+contenidoDeLasPlantas(planta, hormonas).
+contenidoDeLasPlantas(planta, minerales).
+contenidoDeLasPlantas(planta, metaloides).
+contenidoDeLasPlantas(planta, proteínas).
+contenidoDeLasPlantas(planta, enzimas).
+contenidoDeLasPlantas(planta, alcaloides).
+
+%Efectos secundarios de los medicamentos
+%*******************************************************************************************
+efectosSecundariosMedicamentos(medicamento, 'congestion hepática').
+efectosSecundariosMedicamentos(medicamento, 'fatiga excesiva').
+efectosSecundariosMedicamentos(medicamento, adicción).
+efectosSecundariosMedicamentos(medicamento, alergias).
+efectosSecundariosMedicamentos(medicamento, 'eliminación de la flora intestinal').
+efectosSecundariosMedicamentos(medicamento, gastritis).
+efectosSecundariosMedicamentos(medicamento, colitis).
+
+%Listado de plantas que producen medicamentos
+%*******************************************************************************************
+plantasProdMedic(digital,digitalina).
+plantasProdMedic(digital,'tónico cardiaco').
+plantasProdMedic(opio,morfina).
+plantasProdMedic(opio,codeina).
+plantasProdMedic(ipeca,emetina).
+plantasProdMedic('nuez vómica',estricnina).
+plantasProdMedic('eléboro blanco',veratrina).
+plantasProdMedic(colchico,colquicina).
+plantasProdMedic(belladona,atronina).
+plantasProdMedic(quina,quinina).
+plantasProdMedic(cacao,teobromina).
+plantasProdMedic(retama,esparteína).
+plantasProdMedic(coca,cacaína).
+plantasProdMedic(peyote,mescalina).
+plantasProdMedic(efedra,efedrina).
+plantasProdMedic(barrasco,hormonas).
+plantasProdMedic('nenúfar amarillo',lutenurina).
+plantasProdMedic(ñame,diosponina).
+plantasProdMedic(artemisa,tauremisina).
+plantasProdMedic('Semilla de yute',olitorisida).
+plantasProdMedic(toloache,'ácido lisergico (LSD)').
+plantasProdMedic(eucalipto,eucaliptol).
+plantasProdMedic(rosal,'vitamina C').
+plantasProdMedic(rosal,quercitrina).
+
+
+
+%Listado de plantas esenciales
+%*******************************************************************************************
+botiquin('anís estrella').
+botiquin(menta).
+botiquin(árnica).
+botiquin(salvia).
+botiquin(tila).
+botiquin(eucalipto).
+botiquin(yerbabuena).
+botiquin(manzanilla).
+botiquin('cola de caballo').
+botiquin(romero).
+botiquin(toronjil).
+botiquin(sanguinaria).
+botiquin(linaza).
+botiquin(hamamelis).
+botiquin(zarzaparrilla).
+botiquin(boldo).
+botiquin('diente de león').
+botiquin(azahar).
+botiquin(malva).
+botiquin(marrubio).
+botiquin(rosal).
 
 %Listar plantas medicinales y su nombre científico
 %*******************************************************************************************
@@ -41,70 +109,70 @@ preparacionDeHiervas(horchata,'se muelen las semillas agregando agua para formar
 
 
 
-%¿Cuales son las  enfermedades que curan las plantas?.
+%Lista de las plantas y que enfermedades alivia
 %*******************************************************************************************
 elimina(retema,parátitos).
 elimina(retema,hidropesía).
-elimina(retema,acumulación_de_toxinas).
-elimina(retema,problemas_renales).
+elimina(retema,'acumulación de toxinas').
+elimina(retema,'problemas renales').
 
 elimina(ricino,estreñimiento).
 elimina(ricino,peritonitis).
 elimina(ricino,lombrices).
-elimina(ricino,hernia_estrangulada).
+elimina(ricino,'hernia estrangulada').
 elimina(ricino,parátitos).
-elimina(ricino,caída_de_cabello).
+elimina(ricino,'caída de cabello').
 elimina(ricino,caspa).
 elimina(ricino,seborrea).
 
 elimina(rosal,estreñimiento).
-elimina(rosal,cólicos_infantles).
+elimina(rosal,'cólicos infantles').
 elimina(rosal,empachos).
 elimina(rosal,conjuntivitis).
 
-elimina(romero,infecciones_vaginales).
-elimina(romero,baja_energía).
-elimina(romero,problemas_mestruales).
-elimina(romero,mala_digestión).
+elimina(romero,'infecciones vaginales').
+elimina(romero,'baja energía').
+elimina(romero,'problemas mestruales').
+elimina(romero,'mala digestión').
 elimina(romero,estrés).
-elimina(romero,caída_de_cabello).
+elimina(romero,'caída de cabello').
 
-elimina(ruda,partos_difíciles).
-elimina(ruda,hijos_no_deseados).
-elimina(ruda,mal_humor_en_ciclo_menstrual).
+elimina(ruda,'partos difíciles').
+elimina(ruda,'hijos no deseados').
+elimina(ruda,'mal humor en ciclo menstrual').
 elimina(ruda,jaquecas).
-elimina(ruda,problemas_mestruales).
+elimina(ruda,'problemas mestruales').
 
 elimina(simonillo,estreñimiento).
 elimina(simonillo,ictericia).
-elimina(simonillo,catarro_vía_biliares).
-elimina(simonillo,cólico_hepático).
-elimina(simonillo,dispepsia_crónica).
+elimina(simonillo,'catarro de vía biliares').
+elimina(simonillo,'cólico hepático').
+elimina(simonillo,'dispepsia crónica').
 
-elimina(tamarindo,problemas_renales).
+elimina(tamarindo,'problemas renales').
 elimina(tamarindo,estreñimiento).
 elimina(tamarindo,sed).
 elimina(tamarindo,empachos).
-elimina(tamarindo,indigestión_infantil).
+elimina(tamarindo,'indigestión infantil').
 
-elimina(tabachín,hígado_intoxicado).
-elimina(tabachín,riñon_intoxicado).
-elimina(tabachín,hijos_no_deseados).
-elimina(tabachín,problemas_mestruales).
+elimina(tabachín,'hígado intoxicado').
+elimina(tabachín,'riñon intoxicado').
+elimina(tabachín,'hijos no deseados').
+elimina(tabachín,'problemas mestruales').
 
-elimina(taray,problemas_renales).
-elimina(taray,cálculos_renales).
+elimina(taray,'problemas renales').
+elimina(taray,'cálculos renales').
 
 elimina(tila,nerviosismo).
-elimina(tila,malestar_general).
-elimina(tila,problemas_de_sueño).
-elimina(tila,dolor_histérico_de_cabeza).
+elimina(tila,'malestar general').
+elimina(tila,'problemas de sueño').
+elimina(tila,'dolor histérico de cabeza').
 elimina(tila,fiebre).
-elimina(tila,tos_espasmódica).
+elimina(tila,'tos espasmódica').
 elimina(tila,estrés).
 
 
-%¿Cuales son los modos de preparación de una planta en especifico?
+%Método de preparación de las plantas
 %*******************************************************************************************
 preparacionDePlanta(retema,'las ramas, flores y semillas se hierven').
 preparacionDePlanta(retema,'se hierve un muñado de cenizas de la planta en un litro de agua y se usa como té').
@@ -170,9 +238,8 @@ efectoPlanta(tóxica,'es venenosa').
 efectoPlanta(vermífuga,'expulsa gusanos intestinales').
 efectoPlanta(vulneraria,'cura llagas y heridas').
 
-
-%*******************************************************************************************
-%¿Cuales son las acciones o efectos que tienen las plantas?    
+%Lista de efectos de las plantas en el cuerpo
+%*******************************************************************************************   
 efecto(retema,laxante).
 efecto(retema,diurética).
 efecto(retema,depurativa).
@@ -223,7 +290,7 @@ efecto(tila,antipirética).
 efecto(tila,antiespasmódica).
 
 
-%¿Qué elementos tiene una planta en especifica?
+%Elementos de las plantas
 %*******************************************************************************************
 
 parteDePlanta(retema, 'ramas, flores, semillas').
@@ -237,10 +304,19 @@ parteDePlanta(tabachín, 'hojas, flores, ramas, fruto').
 parteDePlanta(taray, 'flores, ramas').
 parteDePlanta(tila, 'flores').
 
-%¿Cual es el origen de una planta?
+%Origen de las plantas
 %******************************************************************************************
 
-
+origenPlanta(retema, 'noroeste de africa y la península ibérica').
+origenPlanta(ricino, 'africa tropical').
+origenPlanta(rosal, 'asia, persia y asia Menor.').
+origenPlanta(romero, 'francia').
+origenPlanta(ruda, 'europa').
+origenPlanta(simonillo, 'Desconocido, pero se encuentra en mexico, colombia, peru, estados unidos, guatemala, ecuador.').
+origenPlanta(tamarindo, 'india').
+origenPlanta(tabachín, 'zonas templadas o calientes del pais').
+origenPlanta(taray, 'Desconocido, pero se encuentra en mexico').
+origenPlanta(tila, 'europa, se da tambien en los bosques mexicanos').
 
 %*******************************************************************************************
 
@@ -298,7 +374,7 @@ recetar(AFECCIONES,PLANTA,MODO,PREPARACION):-elimina(PLANTA,AFECCIONES),aplicaci
 usar(AFECCION,PREPARACION):-modoDePreparacion(PREPARACION,AFECCION).
 %usar(estrés,X).
 
-buscarNombreCientífico(PLANTA,CIENTIFICO):-nombreCientifico(PLANTA,CIENTIFICO).
+
 %buscarNombreCientífico(romero,Y).
 
 té(X):-modoDePreparacion(té,X).
@@ -320,9 +396,75 @@ efectoXPlanta(Z,X):-efecto(X,Y),efectoPlanta(Y,Z).
 
 
 %*******************************************************************************************
-%¿Cuales son las plantas que curan el herpes?
-plantasCuranHerpes(Planta):-elimina(Planta,herpes).
+
+%¿Cuales son plantas o plantas medicinales?
+listaDePlantas(X):-planta(X).
+
+%¿Qué elementos se encuentran en las plantas?
+elementosDeTodasLasPlanta(X,Y):-parteDePlanta(X,Y).
+
+%¿Qué elementos tiene una planta en especifica? 
+elementosDeCadaPlanta(Planta,X):-parteDePlanta(Planta,X).
+
+%¿Qué plantas producen medicamentos?
+
+
+%¿Qué medicamentos producen una planta en especifico?
+
+
+%¿Qué medicamentos provienen de plantas?
+
+
+%¿Cuales son las acciones o efectos de medicamentos provenientes de plantas?
+
+
+%¿Cuales son los efectos o acciones de un medicamento en especifico?
+
+
+%¿Cuales son las acciones o efectos que tienen las plantas?    
+
+
+%Significado de palabras que son acciones o efectos de plantas sobre organismo
+
+
+%Listado de plantas y sus acciones o efectos sobre el organismo
+
+
+%¿Acciones o efectos de una planta en especifico
+
 
 %¿Qué plantas son analgésicas?
 plantasAnalgesica(Planta):-efecto(Planta,analgésica).
 
+%Listar plantas medicinales y su nombre científico
+buscarNombreCientífico(Planta,X):-nombreCientifico(Planta,X).
+
+%¿Cuales son las  enfermedades que curan las plantas?.*************************************************
+cura(X,Y):-planta(X), elimina(X,Y).
+
+%¿Cuales son  las enfermedades que que cura una planta en específico? Zabila
+curaDeCadaPlanta(Planta,Y):-planta(Planta), elimina(Planta,Y).
+
+%¿Cuales son las plantas que curan el herpes?
+plantasCuranHerpes(Planta):-elimina(Planta,herpes).
+
+%¿Cuales son las formas de preparación para tratamiento de enfermedades con uso de plantas?
+
+
+%¿Cuales son los modos de preparación de una planta en especifico?
+
+
+%¿Cual es el tratamiento y su preparación para alguna enfermedad?
+
+
+%¿Cuales son los origenes de las plantas medicinales?
+
+
+%¿Cual es el origen de una planta?
+
+
+%¿Cual es el tratamiento para una enfermedad (ya sea con plantas o medicamentos)?
+
+
+%Botiquín de plantas
+buscarEnBotiquin(Planta):-planta(Planta),botiquin(Planta).
