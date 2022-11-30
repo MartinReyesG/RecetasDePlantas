@@ -320,82 +320,12 @@ origenPlanta(tila, 'europa, se da tambien en los bosques mexicanos').
 
 %*******************************************************************************************
 
-aplicacion(parátitos,interno,té).
-aplicacion(hidropesía,interno,té).
-aplicacion(acumulación_de_toxinas,interno,té).
-aplicacion(problemas_renales,interno,té).
-aplicacion(estreñimiento,interno,té).
-aplicacion(peritonitis,interno,té).
-aplicacion(lombrices,interno,té).
-aplicacion(hernia_estrangulada,interno,té).
-aplicacion(caída_de_cabello,externo,aceite).
-aplicacion(caspa,externo,aceite).
-aplicacion(seborrea,externo,aceite).
-aplicacion(cólicos_infantles,interno,infusión).
-aplicacion(empachos,interno,infusión).
-aplicacion(conjuntivitis,externo,infusión).
-aplicacion(infecciones_vaginales,externo,té).
-aplicacion(baja_energía,interno,té).
-aplicacion(problemas_mestruales,interno,té).
-aplicacion(mala_digestión,interno,té).
-aplicacion(estrés,interno,té).
-aplicacion(partos_difíciles,interno,té).
-aplicacion(hijos_no_deseados,interno,té).
-aplicacion(mal_humor_en_ciclo_menstrual,interno,té).
-aplicacion(jaquecas,interno,té).
-aplicacion(ictericia,interno,té).
-aplicacion(catarro_vía_biliares,interno,té).
-aplicacion(cólico_hepático,interno,té).
-aplicacion(dispepsia_crónica,interno,té).
-aplicacion(sed,interno,jugo).
-aplicacion(indigestión_infantil,interno,agua).
-aplicacion(hígado_intoxicado,interno,té).
-aplicacion(riñon_intoxicado,interno,té).
-aplicacion(cálculos_renales,interno,remojo).
-aplicacion(nerviosismo,interno,té).
-aplicacion(malestar_general,interno,té).
-aplicacion(problemas_de_sueño,interno,té).
-aplicacion(dolor_histérico_de_cabeza,interno,té).
-aplicacion(fiebre,interno,té).
-aplicacion(tos_espasmódica,interno,té).
 
 
-%REGLAS-------------------------------------------------------------------
-
-recetar(AFECCIONES,PLANTA,MODO,PREPARACION):-elimina(PLANTA,AFECCIONES),aplicacion(AFECCIONES,MODO,PREPARACION).
-%recetar(X,Y,interno,té).
-%recetar(estreñimiento,Y,interno,té).
-%recetar(partos_difíciles,X,Z,R).
-%recetar(X,tila,Z,R).
-
-
-
-
-usar(AFECCION,PREPARACION):-modoDePreparacion(PREPARACION,AFECCION).
-%usar(estrés,X).
-
-
-%buscarNombreCientífico(romero,Y).
-
-té(X):-modoDePreparacion(té,X).
-aceite(X):-modoDePreparacion(aceite,X).
-agua(X):-modoDePreparacion(agua,X).
-infusión(X):-modoDePreparacion(infusión,X).
-remojo(X):-modoDePreparacion(remojo,X).
-
-ingerir(X,Z,Y):-elimina(X,Z),modoDeAplicacion(Z,Y).
-%ingerir(ruda,X,Y).
-
-
-
-%funciones extras sin probar---------------------------------------------------------------------------------------
-resumen_planta(X,Y,Z):-nombreCientifico(X,Y),elimina(X,Z).
-modo_uso(X,Z,W,Y):-uso(X,Y),preparacionDeHiervas(Y,Z),preparacionDePlanta(X,W).
-efectoNombreplanta(Y,X):-efecto(X,Y),efectoPlanta(Y,_).
-efectoXPlanta(Z,X):-efecto(X,Y),efectoPlanta(Y,Z).
-
-
+%Reglas y relaciones
 %*******************************************************************************************
+resumenDePlanta(Planta,Y,Z):-nombreCientifico(Planta,Y),elimina(Planta,Z).
+buscarPlantaPorEnfermedad(Enfermedad,X):-elimina(X,Enfermedad).
 
 %¿Cuales son plantas o plantas medicinales?
 listaDePlantas(X):-planta(X).
@@ -407,31 +337,27 @@ elementosDeTodasLasPlanta(X,Y):-parteDePlanta(X,Y).
 elementosDeCadaPlanta(Planta,X):-parteDePlanta(Planta,X).
 
 %¿Qué plantas producen medicamentos?
-
+buscarPlantaProdMedicamento(X,Y):-plantasProdMedic(X,Y).
 
 %¿Qué medicamentos producen una planta en especifico?
-
+buscarCadaPlantaProdMedicamento(Planta,Y):-plantasProdMedic(Planta,Y).
+%cacao, toloache, peyote
 
 %¿Qué medicamentos provienen de plantas?
+buscarMedicamentosDePlantas(Medicamento,Y):-plantasProdMedic(Y,Medicamento).
+%mescalina teobromina
 
-
-%¿Cuales son las acciones o efectos de medicamentos provenientes de plantas?
-
-
-%¿Cuales son los efectos o acciones de un medicamento en especifico?
-
-
-%¿Cuales son las acciones o efectos que tienen las plantas?    
-
+%¿Cuales son las acciones o efectos que tienen las plantas?
+buscarEfectosDeLasPlantas(X,_):-efectoPlanta(X,_).
 
 %Significado de palabras que son acciones o efectos de plantas sobre organismo
-
+buscarSignificadoDeEfectosDePlantas(X,Y):-efectoPlanta(X,Y).
 
 %Listado de plantas y sus acciones o efectos sobre el organismo
-
+buscarEfectosPlanta(X,Y):-efecto(X,Y).
 
 %¿Acciones o efectos de una planta en especifico
-
+buscarEfectosDeCadaPlanta(Planta,Y):-efecto(Planta,Y).
 
 %¿Qué plantas son analgésicas?
 plantasAnalgesica(Planta):-efecto(Planta,analgésica).
@@ -439,7 +365,7 @@ plantasAnalgesica(Planta):-efecto(Planta,analgésica).
 %Listar plantas medicinales y su nombre científico
 buscarNombreCientífico(Planta,X):-nombreCientifico(Planta,X).
 
-%¿Cuales son las  enfermedades que curan las plantas?.*************************************************
+%¿Cuales son las  enfermedades que curan las plantas?.
 cura(X,Y):-planta(X), elimina(X,Y).
 
 %¿Cuales son  las enfermedades que que cura una planta en específico? Zabila
@@ -449,22 +375,16 @@ curaDeCadaPlanta(Planta,Y):-planta(Planta), elimina(Planta,Y).
 plantasCuranHerpes(Planta):-elimina(Planta,herpes).
 
 %¿Cuales son las formas de preparación para tratamiento de enfermedades con uso de plantas?
-
+modoDePreparacionPorEnfermedad(Planta,X,Y,Z):-elimina(Planta,X),preparacionDePlanta(Planta,Y),uso(Planta,Z).
 
 %¿Cuales son los modos de preparación de una planta en especifico?
-
-
-%¿Cual es el tratamiento y su preparación para alguna enfermedad?
-
+modoDePreparacion(Planta,Z,W,Y):-uso(Planta,Y),preparacionDeHiervas(Y,Z),preparacionDePlanta(Planta,W).
 
 %¿Cuales son los origenes de las plantas medicinales?
-
+buscarOrigePlanta(X,Y):-origenPlanta(X,Y).
 
 %¿Cual es el origen de una planta?
-
-
-%¿Cual es el tratamiento para una enfermedad (ya sea con plantas o medicamentos)?
-
+buscarOrigenDeCadaPlanta(Planta,X):-origenPlanta(Planta,X).
 
 %Botiquín de plantas
 buscarEnBotiquin(Planta):-planta(Planta),botiquin(Planta).
